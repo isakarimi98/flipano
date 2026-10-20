@@ -1,0 +1,6 @@
+{
+  "name": "Flipano - فلیپانو | افزونه وردپرس کتابخوان سه‌بعدی",
+  "description": "لندینگ پیج رسمی افزونه وردپرس فلیپانو (Flipano) برای تبدیل PDF و تصاویر به کتاب و مجله ورق‌زن سه‌بعدی در مارکت ژاکت.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
