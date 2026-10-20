@@ -21,42 +21,44 @@ const iconMap = {
 
 export const UseCases: React.FC = () => {
   return (
-    <section id="use-cases" className="py-16 md:py-24 relative">
+    <section id="use-cases" className="py-14 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <div className="inline-block px-3 py-1 rounded-full bg-white/[0.08] border border-white/15 text-xs font-semibold text-amber-300">
             کاربردهای متنوع
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            برای هر نوع محتوای تصویری
+            برای هر نوع محتوای تصویری و مکتوب
           </h2>
           <p className="text-sm sm:text-base text-white/75 leading-relaxed">
-            از فروشگاه‌های ووکامرس تا وب‌سایت‌های شخصی و پورتفولیو، فلیپانو بالاترین کیفیت نمایش اسناد را رقم می‌زند.
+            از فروشگاه‌های اینترنتی تا وب‌سایت‌های شرکتی، آموزشی و پورتفولیو، بالاترین کیفیت نمایش اسناد در دسترس شماست.
           </p>
         </div>
 
-        {/* 6 Use Cases Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 6 Use Cases Grid - Zero English Words */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {USE_CASES.map((useCase, index) => {
             const Icon = iconMap[useCase.icon as keyof typeof iconMap] || BookMarked;
             return (
               <div
                 key={index}
-                className="group relative rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#FF7A00]/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
+                className="group relative rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#FF7A00]/40 p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Bar with Icon & EnTitle */}
+                  {/* Top Bar with Icon & Persian Category */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-11 h-11 rounded-xl bg-[#001c6d] border border-white/10 flex items-center justify-center text-[#FF7A00] group-hover:scale-105 transition-transform">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-mono text-white/50">{useCase.enTitle}</span>
+                    <span className="text-xs text-white/50 bg-white/[0.06] px-2 py-0.5 rounded">
+                      {useCase.category}
+                    </span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
                     {useCase.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-white/75 leading-relaxed mb-4">

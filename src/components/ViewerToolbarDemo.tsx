@@ -28,56 +28,56 @@ export const ViewerToolbarDemo: React.FC = () => {
     },
     {
       id: 'zoom',
-      name: 'Zoom (بزرگنمایی)',
+      name: 'بزرگنمایی جزییات',
       icon: ZoomIn,
-      desc: 'بزرگنمایی ۲ برابری و پن دستی برای مطالعه متون و نقوش ریز',
+      desc: 'بزرگنمایی دو برابری و بررسی دقیق متون و نقوش ریز',
     },
     {
       id: 'thumbs',
-      name: 'Thumbnails (بندانگشتی)',
+      name: 'پیش‌نمایش بندانگشتی',
       icon: LayoutGrid,
-      desc: 'نمایش نوار پیش‌نمایش تمام صفحات و پرش مستقیم با یک کلیک',
+      desc: 'نمایش نوار بندانگشتی تمام صفحات و پرش مستقیم با یک کلیک',
     },
     {
       id: 'music',
-      name: 'Music (موسیقی)',
+      name: 'موسیقی زمینه',
       icon: Music,
-      desc: 'پخش یا توقف موسیقی آرامش‌بخش پس‌زمینه با کنترل بلندی صدا',
+      desc: 'پخش یا توقف موسیقی آرامش‌بخش مطالعه با کنترل بلندی صدا',
     },
     {
       id: 'sound',
-      name: 'Sound (صدای ورق‌زدن)',
+      name: 'صدای ورق‌زدن',
       icon: Volume2,
       desc: 'فعال یا بی‌صدا کردن افکت صوتی حرکت برگه‌های کاغذ',
     },
     {
       id: 'download',
-      name: 'Download (دانلود PDF)',
+      name: 'دانلود مستقیم',
       icon: Download,
-      desc: 'امکان فعال‌سازی دکمه دانلود مستقیم نسخه اصلی PDF توسط کاربر',
+      desc: 'امکان فعال‌سازی دریافت مستقیم نسخه اصلی سند توسط کاربر',
     },
     {
       id: 'fullscreen',
-      name: 'Fullscreen (تمام‌صفحه)',
+      name: 'نمایش تمام‌صفحه',
       icon: Maximize2,
       desc: 'ورود به حالت تمام‌صفحه بدون المان‌های مزاحم مرورگر',
     },
   ];
 
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-14 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <div className="inline-block px-3 py-1 rounded-full bg-white/[0.08] border border-white/15 text-xs font-semibold text-amber-300">
             ابزارهای کامل مشاهده‌گر
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            نوار ابزار هوشمند برای کنترل تام مخاطب
+            نوار ابزار هوشمند برای ناوبری آسان
           </h2>
           <p className="text-sm sm:text-base text-white/75 leading-relaxed">
-            کاربران شما بدون سردرگمی به تمامی کلیدهای پیمایش، بزرگنمایی، تنظیمات صوتی و اشتراک‌گذاری دسترسی دارند.
+            کاربران بدون سردرگمی به تمامی کلیدهای پیمایش، بزرگنمایی، تنظیمات صوتی و اشتراک‌گذاری دسترسی دارند.
           </p>
         </div>
 

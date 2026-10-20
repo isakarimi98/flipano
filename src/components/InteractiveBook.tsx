@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import { playPageFlipSound, toggleAmbientMusic, isAmbientMusicPlaying } from '../utils/audio';
 
-// Generated authentic Persian miniature and tazhib illuminations for Hafez book
 import gardenImg from '../assets/images/hafez_miniature_garden_1792517785871.jpg';
 import tazhibImg from '../assets/images/hafez_tazhib_illumination_1792517785660.jpg';
 import poetImg from '../assets/images/hafez_miniature_figures_1792517786362.jpg';
@@ -47,7 +46,7 @@ export const InteractiveBook: React.FC = () => {
   const [flipDirection, setFlipDirection] = useState<'next' | 'prev' | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // 4-page unified Hafez poetry book (۲ صفحه دوبرگی کاملاً هماهنگ)
+  // 4-page unified Hafez poetry book with perfectly aligned side-by-side hemistichs
   const spreads: Spread[] = [
     {
       id: 0,
@@ -108,7 +107,7 @@ export const InteractiveBook: React.FC = () => {
       setTimeout(() => {
         setCurrentSpread((prev) => prev + 1);
         setFlipDirection(null);
-      }, 420);
+      }, 380);
     }
   };
 
@@ -119,7 +118,7 @@ export const InteractiveBook: React.FC = () => {
       setTimeout(() => {
         setCurrentSpread((prev) => prev - 1);
         setFlipDirection(null);
-      }, 420);
+      }, 380);
     }
   };
 
@@ -130,7 +129,7 @@ export const InteractiveBook: React.FC = () => {
       setTimeout(() => {
         setCurrentSpread(index);
         setFlipDirection(null);
-      }, 420);
+      }, 380);
     }
   };
 
@@ -171,43 +170,48 @@ export const InteractiveBook: React.FC = () => {
 
   const renderPoetryPage = (page: PoetryPage, isRight: boolean) => (
     <div 
-      className={`h-full flex flex-col justify-between p-3.5 sm:p-5 bg-[#faf6ed] text-slate-800 relative select-none ${
+      className={`h-full flex flex-col justify-between p-3 sm:p-4 bg-[#faf6ed] text-slate-800 relative select-none ${
         isRight 
-          ? 'border-l border-amber-900/20 shadow-[inset_-12px_0_20px_rgba(0,0,0,0.12)]' 
-          : 'shadow-[inset_12px_0_20px_rgba(0,0,0,0.12)]'
+          ? 'border-l border-amber-900/20 shadow-[inset_-10px_0_18px_rgba(0,0,0,0.1)]' 
+          : 'shadow-[inset_10px_0_18px_rgba(0,0,0,0.1)]'
       }`}
     >
       {/* Delicate traditional Tazhib border line */}
-      <div className="absolute inset-2 sm:inset-3 border border-amber-600/30 rounded pointer-events-none"></div>
-      <div className="absolute inset-2.5 sm:inset-3.5 border border-amber-700/15 rounded pointer-events-none"></div>
+      <div className="absolute inset-2 sm:inset-2.5 border border-amber-700/25 rounded pointer-events-none"></div>
 
       {/* Top Header Badge */}
-      <div className="relative z-10 flex items-center justify-between text-[10px] sm:text-[11px] text-amber-900 font-semibold pb-1.5 border-b border-amber-900/15">
+      <div className="relative z-10 flex items-center justify-between text-[10px] text-amber-900 font-semibold pb-1 border-b border-amber-900/15">
         <span className="flex items-center gap-1">
           <BookOpen className="w-3 h-3 text-[#FF7A00]" />
           <span>{page.title}</span>
         </span>
-        <span className="font-mono text-amber-800/70">صفحه {page.pageNumber}</span>
+        <span className="font-mono text-amber-800/70 text-[9px]">صفحه {page.pageNumber}</span>
       </div>
 
       {/* Top: Related Persian Miniature Illustration */}
-      <div className="relative z-10 my-1.5 sm:my-2 rounded overflow-hidden border border-amber-800/30 shadow-md aspect-[16/9] bg-amber-950">
+      <div className="relative z-10 my-1 rounded overflow-hidden border border-amber-800/30 shadow aspect-[16/9] bg-amber-950 shrink-0">
         <img 
           src={page.image} 
           alt={page.imageAlt}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+          className="w-full h-full object-cover" 
+          loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
       </div>
 
-      {/* Bottom: Classical Hafez Poetry in Nastaliq script */}
-      <div className="relative z-10 my-auto py-1.5 text-center space-y-2">
+      {/* Bottom: Classical Hafez Poetry - Two Hemistichs strictly SIDE BY SIDE (روبروی هم) */}
+      <div className="relative z-10 my-auto py-1 space-y-2">
         {page.couplets.map((couplet, cIdx) => (
-          <div key={cIdx} className="font-nastaliq leading-[2.1] text-xs sm:text-[13px] md:text-sm text-slate-900">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4">
-              <span className="tracking-wide">{couplet[0]}</span>
-              <span className="text-amber-700/40 hidden sm:inline">✤</span>
-              <span className="tracking-wide">{couplet[1]}</span>
+          <div 
+            key={cIdx} 
+            className="grid grid-cols-2 items-center text-center gap-1.5 px-1 py-1 rounded bg-amber-900/[0.03] border border-amber-900/10 text-[11px] sm:text-xs font-semibold text-slate-900 leading-relaxed"
+          >
+            {/* مصرع اول - سمت راست */}
+            <div className="text-center font-serif text-slate-900 truncate">
+              {couplet[0]}
+            </div>
+            {/* مصرع دوم - سمت چپ روبروی مصرع اول */}
+            <div className="text-center font-serif text-amber-950 truncate border-r border-amber-900/15 pr-1">
+              {couplet[1]}
             </div>
           </div>
         ))}
@@ -215,7 +219,7 @@ export const InteractiveBook: React.FC = () => {
 
       {/* Page Footer */}
       <div className="relative z-10 text-[9px] text-amber-800/60 pt-1 border-t border-amber-900/10 flex justify-between items-center">
-        <span>دیوان خواجه شمس‌الدین محمد حافظ شیرازی</span>
+        <span>دیوان خواجه حافظ شیرازی</span>
         <span className="font-serif">ص {page.pageNumber}</span>
       </div>
     </div>
@@ -228,10 +232,10 @@ export const InteractiveBook: React.FC = () => {
         isFullscreen ? 'p-8 flex flex-col justify-center items-center h-screen max-w-none bg-[#001758]' : ''
       }`}
     >
-      {/* Floating Badges */}
+      {/* Floating Badges - Pure Persian */}
       <div className="absolute -top-3.5 right-6 z-20 hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold backdrop-blur-md shadow-lg">
         <Sparkles className="w-3.5 h-3.5" />
-        <span>3D WebGL Engine</span>
+        <span>موتور رندر سه‌بعدی</span>
       </div>
 
       <div className="absolute -top-3.5 left-6 z-20 hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-medium backdrop-blur-md shadow-lg">
@@ -240,7 +244,7 @@ export const InteractiveBook: React.FC = () => {
       </div>
 
       {/* Book Stage with 3D Perspective */}
-      <div className="relative py-2 sm:py-4 flex items-center justify-center min-h-[350px] md:min-h-[410px] overflow-visible perspective-1200">
+      <div className="relative py-2 sm:py-3 flex items-center justify-center min-h-[340px] md:min-h-[390px] overflow-visible perspective-1200">
         
         {/* Soft realistic drop shadow under book */}
         <div className="absolute bottom-1 w-4/5 h-8 bg-black/60 rounded-[50%] blur-xl -z-10 transform scale-y-50"></div>
@@ -255,12 +259,12 @@ export const InteractiveBook: React.FC = () => {
           {/* Complete Two-Page Spread: Real Separate Right & Left Pages */}
           <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl flex border-2 border-amber-800/40 bg-[#f4eee1]">
             
-            {/* Right Page (ورق سمت راست در ساختار فارسی) */}
+            {/* Right Page (ورق سمت راست) */}
             <div className="w-1/2 h-full relative overflow-hidden">
               {renderPoetryPage(spreads[currentSpread].rightPage, true)}
             </div>
 
-            {/* Book Spine Center Gutter Shadow (شیار عطف مرکزی کتاب با گرادیان واقع‌گرایانه) */}
+            {/* Book Spine Center Gutter Shadow */}
             <div className="absolute top-0 bottom-0 left-1/2 -ml-2.5 w-5 z-20 pointer-events-none bg-gradient-to-r from-black/55 via-black/15 to-black/55 opacity-80"></div>
 
             {/* Left Page (ورق سمت چپ) */}
@@ -273,7 +277,7 @@ export const InteractiveBook: React.FC = () => {
               <div 
                 className={`absolute inset-y-0 w-1/2 z-30 pointer-events-none origin-left transition-transform duration-500 ease-out bg-gradient-to-r from-amber-950/20 via-white/20 to-transparent ${
                   flipDirection === 'next' 
-                    ? 'left-1/2 animate-[spin_0.42s_ease-out]' 
+                    ? 'left-1/2 animate-[spin_0.38s_ease-out]' 
                     : 'right-1/2 origin-right'
                 }`}
                 style={{

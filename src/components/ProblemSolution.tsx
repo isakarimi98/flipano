@@ -65,7 +65,7 @@ export const ProblemSolution: React.FC = () => {
             <ul className="space-y-3 text-xs sm:text-sm text-white/90">
               <li className="flex items-start gap-2.5">
                 <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>ورق‌زدن طبیعی و روان با فیزیک انحنای کاغذ و محاسبه سایه‌ها در WebGL</span>
+                <span>ورق‌زدن طبیعی و روان با فیزیک انحنای کاغذ و محاسبه سایه‌ها در موتور سه‌بعدی</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -73,7 +73,7 @@ export const ProblemSolution: React.FC = () => {
               </li>
               <li className="flex items-start gap-2.5">
                 <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>افزایش چشمگیر زمان ماندگاری کاربر در سایت (Time on Page) و نرخ تعامل</span>
+                <span>افزایش چشمگیر زمان ماندگاری کاربر در سایت و نرخ تعامل مخاطب</span>
               </li>
             </ul>
           </div>

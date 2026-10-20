@@ -18,10 +18,10 @@ export const Hero: React.FC = () => {
             {/* Small Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/15 text-white/90 text-xs font-medium">
               <Sparkles className="w-3.5 h-3.5 text-[#FF8500]" />
-              <span>افزونه حرفه‌ای Flipbook سه‌بعدی وردپرس</span>
+              <span>افزونه حرفه‌ای کتابخوان سه‌بعدی وردپرس</span>
             </div>
 
-            {/* Main Headline - Rendered completely in ONE single line across all viewports */}
+            {/* Main Headline - Single line */}
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] font-black text-white tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
               <span>PDF شما، یک کتاب واقعی می‌شود.</span>
             </h1>
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
               فلیپانو فایل‌های PDF و تصاویر شما را به یک کتاب، مجله، کاتالوگ یا آلبوم سه‌بعدی و تعاملی تبدیل می‌کند؛ با ورق‌زدن طبیعی، زوم، تمام‌صفحه، بندانگشتی صفحات و تجربه صوتی.
             </p>
 
-            {/* Action Button - Only "مشاهده قابلیت‌ها", no Zhaket buy button */}
+            {/* Action Button */}
             <div className="pt-2 flex items-center gap-4">
               <a
                 href="#features"
@@ -42,15 +42,15 @@ export const Hero: React.FC = () => {
               </a>
             </div>
 
-            {/* Pure technical notes - Zero Zhaket claims */}
+            {/* Pure technical notes */}
             <div className="pt-3 flex flex-wrap items-center gap-3 text-xs text-white/70">
               <span className="flex items-center gap-1 text-emerald-400 font-semibold">
                 ✓ سازگار با المنتور و گوتنبرگ
               </span>
               <span>·</span>
-              <span>موتور رندرینگ WebGL و Three.js</span>
+              <span>موتور رندرینگ سه‌بعدی شتاب‌یافته</span>
               <span>·</span>
-              <span>پشتیبانی کامل از اسناد فارسی RTL</span>
+              <span>پشتیبانی کامل از اسناد فارسی و راست‌چین</span>
             </div>
 
           </div>

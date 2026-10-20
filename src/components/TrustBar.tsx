@@ -3,10 +3,10 @@ import { Box, FileImage, Smartphone, SlidersHorizontal } from 'lucide-react';
 
 export const TrustBar: React.FC = () => {
   const highlights = [
-    { title: 'WebGL سه‌بعدی', desc: 'موتور پردازش رندر طبیعی Three.js', icon: Box },
-    { title: 'PDF و تصاویر', desc: 'پشتیبانی مستقیم از PDF، JPG و PNG', icon: FileImage },
-    { title: 'طراحی Responsive', desc: 'تجربه لمسی بهینه روی موبایل و تبلت', icon: Smartphone },
-    { title: 'کنترل کامل Viewer', desc: 'زوم، تمام‌صفحه، صوت، و بندانگشتی', icon: SlidersHorizontal },
+    { title: 'رندرینگ سه‌بعدی', desc: 'شبیه‌سازی دقیق فیزیک کاغذ و انحنای برگه', icon: Box },
+    { title: 'اسناد و تصاویر', desc: 'تبدیل مستقیم فایل‌های پی‌دی‌اف و عکس‌ها', icon: FileImage },
+    { title: 'طراحی واکنش‌گرا', desc: 'پیمایش لمسی بهینه روی تلفن همراه و تبلت', icon: Smartphone },
+    { title: 'کنترل کامل مشاهده‌گر', desc: 'امکانات زوم عمیق، حالت تمام‌صفحه و صوت', icon: SlidersHorizontal },
   ];
 
   return (
