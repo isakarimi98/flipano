@@ -8,8 +8,8 @@
 }
 
 .font-nastaliq {
-  font-family: 'IranNastaliq', 'Vazirmatn', -apple-system, sans-serif;
-  letter-spacing: normal;
+  font-family: 'Noto Nastaliq Urdu', 'IranNastaliq', 'Vazirmatn', cursive, serif;
+  line-height: 2.3;
 }
 
 /* Custom subtle scrollbar */
